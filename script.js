@@ -9,15 +9,39 @@ async function getGoals() {
     return data;
 }
 
+
+function displayDescription(descriptionArray) {
+    descriptionArray.forEach((description) => {
+                console.log(description);
+        const descriptionElem =
+        `
+        <p>${goal.description}</p>
+    
+        `
+        bodyElem.insertAdjacentHTML('beforeend',descriptionElem)
+    });
+    }
+
+
+
 function displayGoals(goalsArray) {
 goalsArray.forEach((goal) => {
-    console.log(goal);
+    console.log("detta är goal" + goal);
     const goalElem =
     `
     <p>${goal.title}</p>
+    <button onclick="displayDescription()">Click me</button>
+
+
     `
-    bodyElem.insertAdjacentHTML('beforeend',goalElem)
+        bodyElem.insertAdjacentHTML('beforeend',goalElem)
 });
+}
+
+
+
+function displayDescription(){
+    
 }
 
 
@@ -27,10 +51,9 @@ const goals = await getGoals()
 displayGoals(goals)
 console.log(goals)
 }
-
-
-
-
+ 
 
 
 syncGoals()
+
+
